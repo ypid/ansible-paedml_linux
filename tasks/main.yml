@@ -1,0 +1,36 @@
+---
+# .. vim: foldmarker=[[[,]]]:foldmethod=marker
+
+- name: Autodetect server role
+  set_fact:
+    paedml_linux__server_role: '{{ "main" if (ansible_hostname in ["server"]) else ("opsi" if (ansible_hostname in ["backup"]) else "unknown") }}'
+  when: (paedml_linux__server_role == "autodetect")
+  tags: [ 'role::paedml_linux:pkgs' ]
+
+# Additional packages [[[
+- name: Combine additional package lists
+  set_fact:
+    paedml_linux__additional_packages_combined: '{{
+      paedml_linux__additional_packages|list +
+      (paedml_linux__additional_packages_main_server|list if (paedml_linux__server_role == "main") else []) +
+      (paedml_linux__additional_packages_opsi_server|list if (paedml_linux__server_role == "opsi") else []) }}'
+  tags: [ 'role::paedml_linux:pkgs' ]
+
+- name: Ensure all packages are installed in there latest version
+  apt:
+    update_cache: True
+    upgrade: 'dist'
+  when: (paedml_linux__packages_upgrade|bool)
+  tags: [ 'role::paedml_linux:pkgs' ]
+
+- name: Ensure required packages are installed
+  apt:
+    name: '{{ item }}'
+    state: 'latest'
+    install_recommends: False
+  with_flattened: '{{ paedml_linux__additional_packages_combined }}'
+  tags: [ 'role::paedml_linux:pkgs' ]
+# .. ]]]
+
+
+## FIXME: Check when /home/groups/klassen/lehrer-schule gets created.

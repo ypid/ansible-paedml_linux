@@ -1,0 +1,34 @@
+---
+
+ansigenome_info:
+  github_url: 'https://github.com/ypid/ansible-paedml_linux'
+  git_branch: 'master'
+  galaxy_id: ''
+
+  status:
+    name: 'beta'
+
+  travis: True
+
+  license_url: 'https://tldrlegal.com/license/gnu-affero-general-public-license-v3-%28agpl-3.0%29'
+
+  authors:
+    - name:  'Robin Schneider'
+      url: 'http://ypid.de/'
+      email: 'ypid@riseup.net'
+      twitter: 'ypid'
+      github: 'ypid'
+
+  synopsis: |
+    The ``ypid.paedml_linux`` role allows you to automate the deployment of a
+    [paedML Linux][] environment.
+
+    The role targets the two servers which are running [Univention Corporate Server][]
+    (which is based on Debian GNU/Linux).
+
+    To manage Opsi, there is a separate Ansible role which you are encouraged to
+    checkout called [ypid.opsi][].
+
+    [paedML Linux]: https://www.lmz-bw.de/technische-unterstuetzung/kundenportal/linux.html
+    [Univention Corporate Server]: https://en.wikipedia.org/wiki/Univention_Corporate_Server
+    [ypid.opsi]: https://github.com/ypid/ansible-opsi

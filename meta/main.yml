@@ -1,0 +1,20 @@
+---
+
+dependencies: []
+
+galaxy_info:
+
+  author: 'Robin Schneider'
+  description: 'Manage paedML Linux using Ansible.'
+  license: 'AGPL-3.0'
+  min_ansible_version: '1.9.0'
+
+  platforms:
+
+    - name: Univention
+      versions:
+        - Borgfeld
+
+  galaxy_tags:
+    - lmz
+    - school

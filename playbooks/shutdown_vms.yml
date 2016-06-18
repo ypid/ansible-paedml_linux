@@ -1,0 +1,16 @@
+---
+# .. vim: foldmarker=[[[,]]]:foldmethod=marker
+
+- name: Shutdown VMs
+  hosts: [ 'localhost' ]
+  become: False
+  gather_facts: False
+
+  tasks:
+
+    - vsphere_guest:
+        vcenter_hostname: vcenter.mydomain.local
+        username: myuser
+        password: mypass
+        guest: newvm001
+        state: powered_on

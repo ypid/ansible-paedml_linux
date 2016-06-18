@@ -1,0 +1,57 @@
+---
+# .. vim: foldmarker=[[[,]]]:foldmethod=marker
+
+# Default variables
+# =================
+
+# .. contents:: Sections
+#    :local:
+#
+# .. include:: includes/all.rst
+
+# Packages and installation [[[
+# -------------------------
+
+# .. envvar:: paedml_linux__additional_packages
+#
+# List of additional packages to install on both servers.
+paedml_linux__additional_packages:
+  - 'git'
+  # - 'ntfsprogs'
+
+
+# .. envvar:: paedml_linux__additional_packages_main_server
+#
+# List of additional packages to install on the main server.
+paedml_linux__additional_packages_main_server: []
+
+
+# .. envvar:: paedml_linux__additional_packages_opsi_server
+#
+# List of additional packages to install on the Opsi server.
+paedml_linux__additional_packages_opsi_server: []
+
+
+# .. envvar:: paedml_linux__packages_upgrade
+#
+# If ``True``, ensure that all packages are installed in there latest version.
+paedml_linux__packages_upgrade: True
+
+# .. ]]]
+
+# Server roles [[[
+# ------------
+
+# .. envvar:: paedml_linux__server_role
+#
+# Role of the server.
+#
+# Refer to :ref:`paedml_linux__section_paedml_linux_servers` for a list of
+# servers in `paedML Linux`_.
+#
+# The default is to auto detect the server role based on the hostname. This
+# depends on the hostname not being changed (which is safe to assume because it
+# is very likely not supported by the LMZ_).
+paedml_linux__server_role: 'autodetect'
+
+# .. ]]]
