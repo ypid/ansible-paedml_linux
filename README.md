@@ -4,6 +4,7 @@
      instead have a look at the files in the ./meta/ directory. -->
 
 [![Travis CI](http://img.shields.io/travis/ypid/ansible-paedml_linux.svg?style=flat)](http://travis-ci.org/ypid/ansible-paedml_linux)
+[![Ansible Galaxy](http://img.shields.io/badge/galaxy-ypid.paedml_linux-660198.svg?style=flat)](https://galaxy.ansible.com/ypid/paedml_linux)
 [![Platforms](http://img.shields.io/badge/platforms-univention-lightgrey.svg?style=flat)](#)
 [![GitHub Tags](https://img.shields.io/github/tag/ypid/ansible-paedml_linux.svg)](https://github.com/ypid/ansible-paedml_linux)
 [![GitHub Stars](https://img.shields.io/github/stars/ypid/ansible-paedml_linux.svg)](https://github.com/ypid/ansible-paedml_linux)
@@ -18,7 +19,7 @@ in a production environment.
 
 Manage paedML Linux using Ansible.
 
-The ``ypid.paedml_linux`` role allows you to automate the deployment of a
+The `ypid.paedml_linux` role allows you to automate the deployment of a
 [paedML Linux][] environment.
 
 The role targets the two servers which are running [Univention Corporate Server][]
@@ -30,6 +31,21 @@ checkout called [ypid.opsi][].
 [paedML Linux]: https://www.lmz-bw.de/technische-unterstuetzung/kundenportal/linux.html
 [Univention Corporate Server]: https://en.wikipedia.org/wiki/Univention_Corporate_Server
 [ypid.opsi]: https://github.com/ypid/ansible-opsi
+
+### Installation
+
+This role requires at least Ansible `v1.9.0`. To install it, run:
+
+```Shell
+ansible-galaxy install ypid.paedml_linux
+```
+
+To install via git, run either:
+
+```Shell
+git clone https://github.com/ypid/ansible-paedml_linux.git ypid.paedml_linux
+git submodule add https://github.com/ypid/ansible-paedml_linux.git ypid.paedml_linux
+```
 
 
 
@@ -48,10 +64,9 @@ List of default variables available in the inventory:
 #    :local:
 #
 # .. include:: includes/all.rst
-#
 
-# Additional packages [[[
-# -------------------
+# Packages and installation [[[
+# -------------------------
 
 # .. envvar:: paedml_linux__additional_packages
 #
@@ -71,6 +86,12 @@ paedml_linux__additional_packages_main_server: []
 #
 # List of additional packages to install on the Opsi server.
 paedml_linux__additional_packages_opsi_server: []
+
+
+# .. envvar:: paedml_linux__packages_upgrade
+#
+# If ``True``, ensure that all packages are installed in there latest version.
+paedml_linux__packages_upgrade: True
 
 # .. ]]]
 

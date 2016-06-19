@@ -72,5 +72,5 @@ Available role tags:
   tasks as well as role dependencies.
 
 ``role::paedml_linux:pkgs``
-  Tasks related the managing system packages e. g. upgrading and installation
-  of additional packages.
+  Tasks related to system package management like installing, upgrading or
+  removing packages.

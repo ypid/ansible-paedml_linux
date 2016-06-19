@@ -1,9 +1,9 @@
 ---
 
 ansigenome_info:
+  galaxy_url: 'https://galaxy.ansible.com/ypid/paedml_linux'
   github_url: 'https://github.com/ypid/ansible-paedml_linux'
   git_branch: 'master'
-  galaxy_id: ''
 
   status:
     name: 'beta'
@@ -20,7 +20,7 @@ ansigenome_info:
       github: 'ypid'
 
   synopsis: |
-    The ``ypid.paedml_linux`` role allows you to automate the deployment of a
+    The `ypid.paedml_linux` role allows you to automate the deployment of a
     [paedML Linux][] environment.
 
     The role targets the two servers which are running [Univention Corporate Server][]
