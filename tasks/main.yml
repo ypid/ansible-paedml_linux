@@ -1,7 +1,7 @@
 ---
 # .. vim: foldmarker=[[[,]]]:foldmethod=marker
 
-- name: Autodetect server role
+- name: Auto detect server role
   set_fact:
     paedml_linux__server_role: '{{ "main" if (ansible_hostname in ["server"]) else ("opsi" if (ansible_hostname in ["backup"]) else "unknown") }}'
   when: (paedml_linux__server_role == "autodetect")

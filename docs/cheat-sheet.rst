@@ -20,6 +20,12 @@ Things to clarify with customer
 Things to remember
 ------------------
 
+* Run in ``screen``:
+
+  .. code-block:: console
+
+     univention-upgrade --ignoressh
+
 * Change ``system_partition_size`` to at least 70 GB to have space to install a few applications.
   (Side note: The applications to install are still nothing compared to the software list put together for a `Ubuntu GNU/Linux client for a linuxmuster.net environment <https://github.com/ypid/ansible-linuxmuster_net_client>`_)
 
@@ -31,6 +37,11 @@ Things to remember
 * If there is a upstream Proxy server provided, use it by writing for example
   ``cache_peer wwwproxy.belwue.de parent 8080 3130 default no-query`` into
   ``server:/etc/squid3/local.conf``.
+
+.. * To allow to connect to non-default http ports.
+     Commented out ACL '# http_access deny !web_ports' in server:/etc/squid3/squid.conf
+
+     Will break on update.
 
 Printing
 ~~~~~~~~
