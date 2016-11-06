@@ -7,7 +7,7 @@ Cheat cheat
 .. include:: includes/all.rst
 
 Author‘s cheat cheat for setting up `paedML Linux`_ which you might find useful.
-This can also be considered to be a TODO list of things which can potentially
+This can also be considered a TODO list of things which can potentially
 be automated :)
 
 Things to clarify with customer
@@ -27,7 +27,7 @@ Things to remember
      univention-upgrade --ignoressh
 
 * Change ``system_partition_size`` to at least 70 GB to have space to install a few applications.
-  (Side note: The applications to install are still nothing compared to the software list put together for a `Ubuntu GNU/Linux client for a linuxmuster.net environment <https://github.com/ypid/ansible-linuxmuster_net_client>`_)
+  (Side note: The applications to install are still nothing compared to the software list put together for a `Ubuntu GNU/Linux client in a linuxmuster.net environment <https://github.com/ypid/ansible-linuxmuster_net_client>`_)
 
 * In case there are computers in the mix with less than 200 GiB in capacity,
   consider adopting the ``minimal_backup_parition_size`` parameter
@@ -36,7 +36,7 @@ Things to remember
 
 * If there is a upstream Proxy server provided, use it by writing for example
   ``cache_peer wwwproxy.belwue.de parent 8080 3130 default no-query`` into
-  ``server:/etc/squid3/local.conf``.
+  :file:`server:/etc/squid3/local.conf`.
 
 .. * To allow to connect to non-default http ports.
      Commented out ACL '# http_access deny !web_ports' in server:/etc/squid3/squid.conf
@@ -63,7 +63,7 @@ Setting up printing can be confusing. Some hints.
        device engine fw version: 2PS_1000.003.001
 
        With ``encryption=required`` e. g. TLS required, the device sent a TCP
-       reset after Cups tried an connection upgrade to TLS via HTTP options.
+       reset after Cups tried a connection upgrade to TLS via HTTP options.
 
   #. AppSocket
 
@@ -72,7 +72,7 @@ Setting up printing can be confusing. Some hints.
 * Printers can be setup in the adminvm using :program:`printmanagement.msc`.
 
 * If the printing drivers for Microsoft Windows or Microsoft printing servers
-  is somehow wired, try ignoring them and use "MS Publisher Color Printer". Cups
+  are somehow wired, try ignoring them and use "MS Publisher Color Printer". Cups
   should be able to do the conversion.
 
 * Generic device security: Set language to English (translation can be confusing).
@@ -101,7 +101,7 @@ Setting up printing can be confusing. Some hints.
   .. warning:: It seems paedML Linux does not configure Cups on the main server to enforce the printer to
      room mappings at all! Just add the printer on another Cups server via
      ``https://server.paedml-linux.lokal:631/printers/$printername`` and the main
-     server happily printers your jobs unless you restrict it has suggested.
+     server happily printers your jobs unless you restrict it as suggested.
 
 
 Default passwords
@@ -120,7 +120,7 @@ Remote access
 
 You really want to go the OpenVPN route because the OpenSSH version installed
 is very old (OpenSSH_5.5p1 Debian-6.55.201601151048, OpenSSL 0.9.8o 01 Jun
-2010) in terms of Cyphers it supports.
+2010) in terms of cyphers it supports.
 
 OpenVPN in the default configuration of the paedML Linux does also not use the
 strongest cyphers out there.

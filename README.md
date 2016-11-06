@@ -17,7 +17,7 @@ in a production environment.
 
 ***
 
-Manage paedML Linux using Ansible.
+Manage paedML Linux using Ansible
 
 The `ypid.paedml_linux` role allows you to automate the deployment of a
 [paedML Linux][] environment.
@@ -34,7 +34,7 @@ checkout called [ypid.opsi][].
 
 ### Installation
 
-This role requires at least Ansible `v1.9.0`. To install it, run:
+This role requires at least Ansible `v2.1.3`. To install it, run:
 
 ```Shell
 ansible-galaxy install ypid.paedml_linux
@@ -47,83 +47,21 @@ git clone https://github.com/ypid/ansible-paedml_linux.git ypid.paedml_linux
 git submodule add https://github.com/ypid/ansible-paedml_linux.git ypid.paedml_linux
 ```
 
+### Documentation
+
+More information about `ypid.paedml_linux` can be found in the
+[official ypid.paedml_linux documentation](https://ypid-ansible-roles.readthedocs.io/en/latest/ansible/roles/ansible-paedml_linux/docs/).
 
 
-### Role variables
-
-List of default variables available in the inventory:
-
-```YAML
----
-# .. vim: foldmarker=[[[,]]]:foldmethod=marker
-
-# Default variables
-# =================
-
-# .. contents:: Sections
-#    :local:
-#
-# .. include:: includes/all.rst
-
-# Packages and installation [[[
-# -------------------------
-
-# .. envvar:: paedml_linux__additional_packages
-#
-# List of additional packages to install on both servers.
-paedml_linux__additional_packages:
-  - 'git'
-  # - 'ntfsprogs'
 
 
-# .. envvar:: paedml_linux__additional_packages_main_server
-#
-# List of additional packages to install on the main server.
-paedml_linux__additional_packages_main_server: []
-
-
-# .. envvar:: paedml_linux__additional_packages_opsi_server
-#
-# List of additional packages to install on the Opsi server.
-paedml_linux__additional_packages_opsi_server: []
-
-
-# .. envvar:: paedml_linux__packages_upgrade
-#
-# If ``True``, ensure that all packages are installed in there latest version.
-paedml_linux__packages_upgrade: True
-
-# .. ]]]
-
-# Server roles [[[
-# ------------
-
-# .. envvar:: paedml_linux__server_role
-#
-# Role of the server.
-#
-# Refer to :ref:`paedml_linux__section_paedml_linux_servers` for a list of
-# servers in `paedML Linux`_.
-#
-# The default is to auto detect the server role based on the hostname. This
-# depends on the hostname not being changed (which is safe to assume because it
-# is very likely not supported by the LMZ_).
-paedml_linux__server_role: 'autodetect'
-
-# .. ]]]
-```
-
-List of internal variables used by the role:
-
-    paedml_linux__server_role
-    paedml_linux__additional_packages_combined
 
 
 ### Authors and license
 
 `paedml_linux` role was written by:
 
-- [Robin Schneider](http://ypid.de/) | [e-mail](mailto:ypid@riseup.net) | [Twitter](https://twitter.com/ypid) | [GitHub](https://github.com/ypid)
+- [Robin Schneider](https://me.ypid.de/) | [e-mail](mailto:ypid@riseup.net) | [GitHub](https://github.com/ypid)
 
 License: [AGPLv3](https://tldrlegal.com/license/gnu-affero-general-public-license-v3-%28agpl-3.0%29)
 

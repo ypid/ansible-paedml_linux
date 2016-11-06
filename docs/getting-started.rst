@@ -7,6 +7,31 @@ Getting started
 .. include:: includes/all.rst
 
 
+.. _paedml_linux__section_paedml_linux_servers:
+
+paedML Linux servers
+--------------------
+
+``main``
+  The "main" server has by default the hostname "server".
+  It is responsible for the following services: DNS, DHCP, LDAP, print server
+  and providing user profiles and network file shares.
+  Targeted by this role.
+
+``opsi``
+  The "opsi" server has by default the hostname "backup".
+  It is responsible for software distribution and management system using
+  Opsi_.
+  Targeted by this role and by ypid.opsi_.
+
+``adminvm``
+  `Microsoft Windows 7`_ server for various management tasks.
+  Not yet targeted by this role.
+
+``firewall``
+  Based on `PfSense`_. Not yet targeted by this role.
+
+
 Example inventory
 -----------------
 
@@ -42,16 +67,17 @@ Or use a slightly more flexible approach like this:
 
 Note that you will need to use unique hostnames if you intent to manage more
 than one `paedML Linux`_ environment.
+ypid is wondering if the LMZ_ does support that :)
 
 Example playbook
 ----------------
 
-Here's an example playbook that can be used your paedML Linux servers:
+Here's an example playbook that uses the ``ypid.paedml_linux`` role:
 
 .. literalinclude:: playbooks/paedml_linux.yml
    :language: yaml
 
-This playbooks is shipped with this role under
+The playbooks is shipped with this role under
 :file:`docs/playbooks/paedml_linux.yml` from which you can symlink it to your
 playbook directory.
 In case you use multiple roles maintained by ypid_, consider
@@ -61,9 +87,9 @@ Ansible tags
 ------------
 
 You can use Ansible ``--tags`` or ``--skip-tags`` parameters to limit what
-tasks are performed during Ansible run. This can be used after host is first
+tasks are performed during Ansible run. This can be used after a host was first
 configured to speed up playbook execution, when you are sure that most of the
-configuration has not been changed.
+configuration is already in the desired state.
 
 Available role tags:
 

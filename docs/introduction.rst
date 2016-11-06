@@ -10,11 +10,13 @@ The role targets the two servers which are running `Univention
 Corporate Server`_ (which is based on Debian_ GNU_/Linux_).
 
 To manage Opsi, there is a separate Ansible role which you are encouraged to
-checkout called `ypid.opsi`_.
+checkout called ypid.opsi_.
 
 
-Short overview of IT school solutions
--------------------------------------
+Short overview of IT school solutions*
+--------------------------------------
+
+| * That ypid has worked with or that are otherwise common in Germany.
 
 ``paedML Windows``
   Based on `Microsoft Windows`_ servers and clients.
@@ -35,45 +37,20 @@ Short overview of IT school solutions
   <paedml_linux__section_item_paedml_linux>`).
   Luckily, the project is quite alive and being lead by the original developer
   team and the community. If you want to support GNU_/Linux_ and `Microsoft
-  Windows`_ clients then checkout `linuxmuster.net`_.
+  Windows`_ clients then checkout linuxmuster.net_.
 
   The author of this Ansible role has written several roles to manage
-  `linuxmuster.net`_ environments too.
+  linuxmuster.net_ environments too.
   See `Erfahrungsbericht Epoptes Einrichtung/Ansible
   <https://mail.lehrerpost.de/pipermail/linuxmuster-user/2015-July/007093.html>`_
   (language: German).
 
 For more details, checkout: `Vergleich der Musterlösungen: Linux - Windows - Novell <https://www.linuxmuster.net/wiki/anwenderwiki:vergleichdermusterloesungen>`_ (language: German).
 
-.. _paedml_linux__section_paedml_linux_servers:
-
-paedML Linux servers
---------------------
-
-``main``
-  The "main" server has by default the hostname "server".
-  It is responsible for the following services: DNS, DHCP, LDAP, print server
-  and providing user profiles and network file shares.
-  Targeted by this role.
-
-``opsi``
-  The "opsi" server has by default the hostname "backup".
-  It is responsible for software distribution and management system using
-  Opsi_.
-  Targeted by this role and by `ypid.opsi`_.
-
-``adminvm``
-  `Microsoft Windows 7`_ server for various management tasks.
-  Not yet targeted by this role.
-
-``firewall``
-  Based on `PfSense`_. Not yet targeted by this role.
-
-
 Installation
 ------------
 
-This role requires at least Ansible ``v1.9.0``. To install it, run::
+This role requires at least Ansible ``v2.1.3``. To install it, run::
 
     ansible-galaxy install ypid.paedml_linux
 
