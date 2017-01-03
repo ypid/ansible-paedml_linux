@@ -16,7 +16,7 @@ checkout called ypid.opsi_.
 Short overview of IT school solutions*
 --------------------------------------
 
-| * That ypid has worked with or that are otherwise common in Germany.
+| * That ypid_ has worked with or that are otherwise common in Germany.
 
 ``paedML Windows``
   Based on `Microsoft Windows`_ servers and clients.
