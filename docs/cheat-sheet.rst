@@ -26,6 +26,8 @@ Things to remember
 
      univention-upgrade --ignoressh
 
+* Import Root CA certificate into the dedicated browser profile you are using for the environment.
+
 * Change ``system_partition_size`` to at least 70 GB to have space to install a few applications.
   (Side note: The applications to install are still nothing compared to the software list put together for a `Ubuntu GNU/Linux client in a linuxmuster.net environment <https://github.com/ypid/ansible-linuxmuster_net_client>`_)
 
