@@ -45,6 +45,8 @@ Things to remember
 
      Will break on update.
 
+* Setup a test client as VM.
+
 Printing
 ~~~~~~~~
 
