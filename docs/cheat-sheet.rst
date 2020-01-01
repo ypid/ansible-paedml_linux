@@ -32,7 +32,7 @@ Things to remember
   (Side note: The applications to install are still nothing compared to the software list put together for a `Ubuntu GNU/Linux client in a linuxmuster.net environment <https://github.com/ypid/ansible-linuxmuster_net_client>`_)
 
 * In case there are computers in the mix with less than 200 GiB in capacity,
-  consider adopting the ``minimal_backup_parition_size`` parameter
+  consider adapting the ``minimal_backup_parition_size`` parameter
   appropriately. So it might not be possible to do a local backup for those
   computers.
 
